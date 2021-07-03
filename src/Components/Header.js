@@ -13,7 +13,10 @@ const Sheader = styled.header`
 
 const Title = styled.h1``;
 
-const List = styled.ul``;
+const List = styled.ul`
+    display: flex;
+    
+`;
 
 const Item = styled.li``;
 
@@ -25,9 +28,9 @@ const Header = () => (
             the Gallery
         </Title>
         <List>
-            <Item>hello</Item>
-            <Item>imma</Item>
-            <Item>newb</Item>
+            <Item>home</Item>
+            <Item>search</Item>
+            <Item>???</Item>
         </List>
     </Sheader>
 )
