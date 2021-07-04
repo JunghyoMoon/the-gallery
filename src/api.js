@@ -3,7 +3,7 @@ import axios from "axios";
 const main = axios.create({
     baseURL: "https://api.artic.edu/api/v1/",
     params: {
-        page: "3",
+        page: "1",
         limit: "15"
     }
 })
