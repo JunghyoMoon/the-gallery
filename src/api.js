@@ -4,14 +4,14 @@ const main = axios.create({
     baseURL: "https://api.artic.edu/api/v1/",
     params: {
         page: "1",
-        limit: "15"
-    }
-})
+        limit: "21",
+    },
+});
 
 const image = axios.create({
-    baseURL: "https://www.artic.edu/iiif/2/:id/full/8/0/default.jpg"
-})
+    baseURL: "https://www.artic.edu/iiif/2/:id/full/8/0/default.jpg",
+});
 
 export const getArt = {
-    artList: () => main.get("artworks")
+    artList: () => main.get("artworks"),
 };

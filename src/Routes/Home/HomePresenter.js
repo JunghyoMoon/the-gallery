@@ -9,7 +9,7 @@ const ArtContainer = styled.div``;
 
 const Pages = styled.ul``;
 
-const HomePresenter = ({ loading, error, artworks }) =>
+const HomePresenter = ({ loading, error, artworks, pagination }) =>
     loading ? null : (
         <Container>
             <ArtContainer>
