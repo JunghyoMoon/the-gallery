@@ -10,14 +10,7 @@ const Container = styled.div`
 
 const ArtContainer = styled.div``;
 
-const SPaginate = styled(Paginate)`
-    width: 100%;
-    display: flex;
-    font-size: 20px;
-    li {
-        display: inline-block;
-    }
-`;
+const SPaginate = styled(Paginate)``;
 
 const HomePresenter = ({
     loading,
@@ -40,7 +33,7 @@ const HomePresenter = ({
             </ArtContainer>
             <SPaginate
                 pageCount={total_pages}
-                pageRangeDisplayed={4}
+                pageRangeDisplayed={5}
                 marginPagesDisplayed={2}
                 previousLabel={"Prev"}
                 containerClassName={"pagination"}
