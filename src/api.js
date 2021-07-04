@@ -2,10 +2,6 @@ import axios from "axios";
 
 const main = axios.create({
     baseURL: "https://api.artic.edu/api/v1/",
-    params: {
-        page: "1",
-        limit: "21",
-    },
 });
 
 const image = axios.create({
@@ -13,5 +9,11 @@ const image = axios.create({
 });
 
 export const getArt = {
-    artList: () => main.get("artworks"),
+    artList: (pageNumber) =>
+        main.get("artworks", {
+            params: {
+                page: pageNumber,
+                limit: 21,
+            },
+        }),
 };

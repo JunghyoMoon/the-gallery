@@ -1,15 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import Paginate from "react-paginate";
 import Thumbnail from "../../Components/Thumbnail";
 
-const Container = styled.div``;
+const Container = styled.div`
+    width: 100%;
+`;
 
 const ArtContainer = styled.div``;
 
-const Pages = styled.ul``;
+const SPaginate = styled(Paginate)`
+    width: 100%;
+    display: flex;
+    font-size: 20px;
+    li {
+        display: inline-block;
+    }
+`;
 
-const HomePresenter = ({ loading, error, artworks, pagination }) =>
+const HomePresenter = ({
+    loading,
+    error,
+    artworks,
+    total_pages,
+    handlePageChange,
+}) =>
     loading ? null : (
         <Container>
             <ArtContainer>
@@ -22,6 +38,14 @@ const HomePresenter = ({ loading, error, artworks, pagination }) =>
                         />
                     ))}
             </ArtContainer>
+            <SPaginate
+                pageCount={total_pages}
+                pageRangeDisplayed={4}
+                marginPagesDisplayed={2}
+                previousLabel={"Prev"}
+                containerClassName={"pagination"}
+                onPageChange={handlePageChange}
+            />
         </Container>
     );
 
