@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import Paginate from "react-paginate";
+import ReactPaginate from "react-paginate";
 import Thumbnail from "../../Components/Thumbnail";
+import Loader from "../../Components/Loader";
 
 const Container = styled.div`
     width: 100%;
@@ -10,7 +11,11 @@ const Container = styled.div`
 
 const ArtContainer = styled.div``;
 
-const SPaginate = styled(Paginate)``;
+const SPaginate = styled(ReactPaginate)`
+    &.pagination {
+        display: flex;
+    }
+`;
 
 const HomePresenter = ({
     loading,
@@ -19,7 +24,9 @@ const HomePresenter = ({
     total_pages,
     handlePageChange,
 }) =>
-    loading ? null : (
+    loading ? (
+        <Loader />
+    ) : (
         <Container>
             <ArtContainer>
                 {artworks &&
