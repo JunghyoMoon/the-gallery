@@ -11,28 +11,37 @@ const Sheader = styled.header`
     align-items: center;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+    font-size: 30px;
+`;
 
 const List = styled.ul`
     display: flex;
-    
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+    margin-right: 10px;
+    font-size: 15px;
+    &:last-child {
+        margin-right: 0px;
+    }
+`;
 
 const LinkTo = styled(Link)``;
 
 const Header = () => (
     <Sheader>
-        <Title>
-            the Gallery
-        </Title>
+        <Title>the Gallery</Title>
         <List>
             <Item>home</Item>
             <Item>search</Item>
             <Item>???</Item>
         </List>
+        <List>
+            <Item>🔨</Item>
+            <Item>👦🏻</Item>
+        </List>
     </Sheader>
-)
+);
 
 export default withRouter(Header);

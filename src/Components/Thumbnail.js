@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    break-inside: avoid;
 `;
 
-const Image = styled.img`
-    max-width: fit-content;
-`;
+const Image = styled.img``;
 
 const LinkTo = styled(Link)``;
 

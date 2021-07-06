@@ -7,9 +7,27 @@ import Loader from "../../Components/Loader";
 
 const Container = styled.div`
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
-const ArtContainer = styled.div``;
+const ArtContainer = styled.div`
+    width: 90%;
+    column-count: 1;
+    column-gap: 0;
+    counter-reset: item-counter;
+
+    @media screen and (min-width: 1000px) {
+        column-count: 2;
+    }
+    @media screen and (min-width: 1600px) {
+        column-count: 3;
+    }
+    @media screen and (min-width: 2200px) {
+        column-count: 4;
+    }
+`;
 
 const SPaginate = styled(ReactPaginate)`
     &.pagination {
