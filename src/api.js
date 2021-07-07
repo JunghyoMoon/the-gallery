@@ -16,4 +16,5 @@ export const getArt = {
                 limit: 21,
             },
         }),
+    artDetails: (id) => main.get(`artworks/${id}`),
 };
