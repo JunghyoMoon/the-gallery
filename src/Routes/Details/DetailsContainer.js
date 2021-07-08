@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import DetailsPresenter from "./DetailsPresenter";
 
-
 class DetailsContainer extends Component {
-    state = {
-        loading: true,
-        artworks: null,
+    constructor(props) {
+        super(props);
+        this.state = {
+            result: null,
+        };
     }
 
     render() {
-        return <DetailsPresenter />
+        console.log(this.props);
+        return <DetailsPresenter />;
     }
 }
 

@@ -51,6 +51,7 @@ const HomePresenter = ({
                     artworks.length > 0 &&
                     artworks.map((work) => (
                         <Thumbnail
+                            id={work.id}
                             title={work.title}
                             imgUrl={`https://www.artic.edu/iiif/2/${work.image_id}/full/843,/0/default.jpg`}
                         />

@@ -11,17 +11,27 @@ const Container = styled.div`
     break-inside: avoid;
 `;
 
-const Image = styled.img``;
-
-const LinkTo = styled(Link)``;
+const Image = styled.img`
+    width: 100%;
+    max-width: 500px;
+    max-height: fit-content;
+`;
 
 const Title = styled.span``;
 
-const Thumbnail = ({ title, imgUrl }) => (
-    <Container>
-        <Image src={imgUrl} alt={title} />
-        <Title>{title}</Title>
-    </Container>
+const Thumbnail = ({ id, title, imgUrl }) => (
+    <Link to={`/${id}`}>
+        <Container>
+            <Image src={imgUrl} alt={title} />
+            <Title>{title}</Title>
+        </Container>
+    </Link>
 );
+
+Thumbnail.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string,
+    imgUrl: PropTypes.string,
+};
 
 export default Thumbnail;
