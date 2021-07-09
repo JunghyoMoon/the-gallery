@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactPaginate from "react-paginate";
+import "./Pagination.css";
 import { getArt } from "../../api";
 import HomePresenter from "./HomePresenter";
 
@@ -39,19 +41,27 @@ class HomeContainer extends Component {
     };
 
     componentDidMount() {
-        this.getArtWorksInfo(1);
+        this.getArtWorksInfo(0);
     }
 
     render() {
         const { loading, error, artworks, total_pages } = this.state;
         return (
-            <HomePresenter
-                loading={loading}
-                error={error}
-                artworks={artworks}
-                total_pages={total_pages}
-                handlePageChange={this.handlePageChange}
-            />
+            <div>
+                <HomePresenter
+                    loading={loading}
+                    error={error}
+                    artworks={artworks}
+                />
+                <ReactPaginate
+                    pageCount={total_pages}
+                    pageRangeDisplayed={4}
+                    marginPagesDisplayed={2}
+                    previousLabel={"Prev"}
+                    containerClassName={"pagination"}
+                    onPageChange={this.handlePageChange}
+                />
+            </div>
         );
     }
 }

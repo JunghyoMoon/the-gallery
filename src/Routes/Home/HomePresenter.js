@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import ReactPaginate from "react-paginate";
 import Thumbnail from "../../Components/Thumbnail";
 import Loader from "../../Components/Loader";
 
@@ -29,12 +28,6 @@ const ArtContainer = styled.div`
     }
 `;
 
-const SPaginate = styled(ReactPaginate)`
-    &.pagination {
-        display: flex;
-    }
-`;
-
 const HomePresenter = ({
     loading,
     error,
@@ -57,14 +50,6 @@ const HomePresenter = ({
                         />
                     ))}
             </ArtContainer>
-            <SPaginate
-                pageCount={total_pages}
-                pageRangeDisplayed={5}
-                marginPagesDisplayed={2}
-                previousLabel={"Prev"}
-                containerClassName={"pagination"}
-                onPageChange={handlePageChange}
-            />
         </Container>
     );
 
